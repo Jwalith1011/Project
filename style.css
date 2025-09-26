@@ -1,0 +1,94 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+header {
+  background: #4b2e2e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #e0c097;
+  border: none;
+  cursor: pointer;
+}
+
+.role-section {
+  display: none;
+  padding: 2rem;
+  background: white;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.login-container {
+  display: none;
+  padding: 1rem;
+  margin: 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.login-container button {
+  padding: 0.5rem 1rem;
+  background: #4b2e2e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.product-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+#productDetail img {
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#productDetail button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4b2e2e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
