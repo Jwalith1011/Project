@@ -6,18 +6,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Tribal Handicrafts</h1>
-    <nav>
-      <button onclick="showSection('admin')">Admin</button>
-      <button onclick="showSection('artisan')">Artisan</button>
-      <button onclick="showSection('customer')">Customer</button>
-      <button onclick="showSection('consultant')">Consultant</button>
-      <button onclick="toggleLogin()">Applicant Login</button>
-    </nav>
-  </header>
+  <div id="loginBox" class="login-container">
+    <h2>Applicant Login</h2>
+    <input type="text" id="username" placeholder="Username or Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="submitLogin()">Submit</button>
+  </div>
 
-  <main>
+  <main id="mainContent" style="display: none;">
+    <header>
+      <h1>Tribal Handicrafts</h1>
+      <nav>
+        <button onclick="showSection('admin')">Admin</button>
+        <button onclick="showSection('artisan')">Artisan</button>
+        <button onclick="showSection('customer')">Customer</button>
+        <button onclick="showSection('consultant')">Consultant</button>
+        <button onclick="toggleLogin()">Applicant Login</button>
+      </nav>
+    </header>
+
     <section id="admin" class="role-section">
       <h2>Admin Panel</h2>
       <p>Manage content, monitor transactions, resolve issues.</p>
@@ -34,26 +41,25 @@
 
       <div class="product-grid">
         <div class="product-card" onclick="showProduct('women')">
-          <img src="1.jpg" alt="upload Image corrtly" width="100">
-          <h3>Women Figurines</h3>
+          <img src="1.jpg" alt="tribal wooden elephant" width="100">
+          <h3>Wodden elephant</h3>
         </div>
 
         <div class="product-card" onclick="showProduct('musicians')">
-          <img src="2.jpg" alt="Musician Figurines" width="">
-          <h3>Musician Figurines</h3>
+          <img src="2.jpg" alt="tribal all decor" width="50">
+          <h3>tribal wall decor</h3>
         </div>
 
         <div class="product-card" onclick="showProduct('pots')">
-          <img src="assets/clay-pots.jpeg" alt="Clay Pots">
-          <h3>Clay Pots</h3>
+          <img src="3.jpg" alt="tribal dolls" width="100">
+          <h3>tribal dolls</h3>
         </div>
       </div>
     </section>
 
-    <section id="productDetail" class="role-section" style="display: none;">
+    <section id="productDetail" class="role-section">
       <button onclick="goBack()">← Go Back</button>
       <img id="detailImg" src="" alt="Product Image">
-    
       <h2 id="detailTitle"></h2>
       <p id="detailPrice"></p>
       <p id="detailReview"></p>
@@ -65,13 +71,6 @@
       <p>Verify authenticity, preserve heritage.</p>
     </section>
   </main>
-
-  <div id="loginBox" class="login-container">
-    <h2>Applicant Login</h2>
-    <input type="text" id="username" placeholder="Username or Email">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="submitLogin()">Submit</button>
-  </div>
 
   <script src="script.js"></script>
 </body>

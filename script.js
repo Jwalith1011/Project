@@ -1,6 +1,5 @@
 function showSection(role) {
-  const sections = document.querySelectorAll('.role-section');
-  sections.forEach(sec => sec.style.display = 'none');
+  document.querySelectorAll('.role-section').forEach(sec => sec.style.display = 'none');
   document.getElementById(role).style.display = 'block';
   document.getElementById('loginBox').style.display = 'none';
 }
@@ -8,17 +7,23 @@ function showSection(role) {
 function toggleLogin() {
   const loginBox = document.getElementById('loginBox');
   loginBox.style.display = loginBox.style.display === 'block' ? 'none' : 'block';
-
-  const sections = document.querySelectorAll('.role-section');
-  sections.forEach(sec => sec.style.display = 'none');
+  document.querySelectorAll('.role-section').forEach(sec => sec.style.display = 'none');
 }
 
 function submitLogin() {
-  const user = document.getElementById('username').value;
-  const pass = document.getElementById('password').value;
+  const user = document.getElementById('username');
+  const pass = document.getElementById('password');
 
-  if (user && pass) {
-    alert(`Login submitted for: ${user}`);
+  if (user.value && pass.value) {
+    alert(`Welcome, ${user.value}!`);
+    document.getElementById('loginBox').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+
+    document.querySelectorAll('.role-section').forEach(sec => sec.style.display = 'none');
+    document.getElementById('customer').style.display = 'block';
+
+    user.value = '';
+    pass.value = '';
   } else {
     alert('Please enter both username/email and password.');
   }
@@ -27,26 +32,31 @@ function submitLogin() {
 function showProduct(id) {
   const products = {
     women: {
-      img: 'assets/figurines-women.jpeg',
-      title: 'Decorative Women Figurines',
+      img: '1.jpg',
+      title: 'wooden elephant decor',
       price: '₹1100',
-      review: '🌟🌟🌟🌟 “Beautifully detailed and vibrant. Adds charm to any space!”'
+      review: '🌟🌟🌟🌟 “Beautifully detailed and vibrant.”'
     },
     musicians: {
-      img: 'assets/figurines-musicians.jpeg',
-      title: 'Traditional Musician Figurines',
+      img: '2.jpg',
+      title: 'wall decor',
       price: '₹1426',
-      review: '🌟🌟🌟🌟🌟 “Cultural masterpiece! The instruments and attire are stunning.”'
+      review: '🌟🌟🌟🌟🌟 “Cultural masterpiece!”'
     },
     pots: {
-      img: 'assets/clay-pots.jpeg',
-      title: 'Handcrafted Clay Pots',
+      img: '3.jpg',
+      title: 'tribal dolls',
       price: '₹1629',
-      review: '🌟🌟🌟🌟 “Elegant and earthy. Perfect for indoor or garden decor.”'
+      review: '🌟🌟🌟🌟 “Elegant and earthy.”'
     }
   };
 
   const product = products[id];
+  if (!product) {
+    alert('Product not found.');
+    return;
+  }
+
   document.getElementById('detailImg').src = product.img;
   document.getElementById('detailTitle').textContent = product.title;
   document.getElementById('detailPrice').textContent = product.price;
@@ -62,5 +72,10 @@ function goBack() {
 }
 
 function purchase() {
-  alert('Purchase initiated! You will be redirected to payment.');
+  alert('Purchase initiated! Redirecting to payment gateway...');
 }
+
+window.onload = function () {
+  document.getElementById('loginBox').style.display = 'block';
+  document.getElementById('mainContent').style.display = 'none';
+};
